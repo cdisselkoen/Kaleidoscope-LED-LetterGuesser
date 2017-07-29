@@ -88,17 +88,17 @@ void LetterGuesserEffect::update(void) {
     changed = false;
     if(isLit) {
       // turn off previously lit keys
-      LEDControl.led_set_crgb_at(currentlyLit.guess1, blank);
-      LEDControl.led_set_crgb_at(currentlyLit.guess2, blank);
-      LEDControl.led_set_crgb_at(currentlyLit.guess3, blank);
+      LEDControl.setCrgbAt(currentlyLit.guess1, blank);
+      LEDControl.setCrgbAt(currentlyLit.guess2, blank);
+      LEDControl.setCrgbAt(currentlyLit.guess3, blank);
     }
     if(isAlpha(last_key_pressed) || (afterSpace && isWhitespace(last_key_pressed))) {
       // illuminate new guesses
       if(isAlpha(last_key_pressed)) currentlyLit = dict[last_key_pressed.keyCode-Key_A.keyCode];  // A gets 0, B gets 1, etc
       else currentlyLit = TRIPLE(T,A,O);  // after whitespace
-      LEDControl.led_set_crgb_at(currentlyLit.guess1, color1);
-      LEDControl.led_set_crgb_at(currentlyLit.guess2, color2);
-      LEDControl.led_set_crgb_at(currentlyLit.guess3, color3);
+      LEDControl.setCrgbAt(currentlyLit.guess1, color1);
+      LEDControl.setCrgbAt(currentlyLit.guess2, color2);
+      LEDControl.setCrgbAt(currentlyLit.guess3, color3);
       isLit = true;
     } else {
       isLit = false;
