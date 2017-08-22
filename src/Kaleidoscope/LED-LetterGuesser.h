@@ -26,8 +26,7 @@ class LetterGuesserEffect : public LEDMode {
  public:
   LetterGuesserEffect(void);
 
-  void begin(void) final;
-  void init(void) final;
+  void setup(void) final;
   void update(void) final;
 
   cRGB color1;
