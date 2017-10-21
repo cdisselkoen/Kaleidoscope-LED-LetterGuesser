@@ -66,7 +66,7 @@ Key LetterGuesserEffect::last_key_pressed = Key_Escape;
 bool LetterGuesserEffect::changed = false;
 
 Key LetterGuesserEffect::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
-  if (key_is_pressed(key_state)) {
+  if (keyIsPressed(key_state)) {
     if(isModifier(mapped_key)) {
       // leave previous lighting in place
       return mapped_key;
